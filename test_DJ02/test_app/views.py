@@ -1,22 +1,38 @@
 from django.shortcuts import render
-
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'test_app/index.html')
+    data = { 'main':'yes'}
+    return render(request, 'test_app/index.html',data)
 def nic_1(request):
-    data ={'card_img':'nic1.jpg', 'card_name':'Николай I (Николай Павлович)',
+    data ={'main':'no','card_img':'test_app/img/nic1.jpg', 'card_name':'Николай I (Николай Павлович)',
            'card_life':'25 июня (6 июля) 1796 г. - 18 февраля (2 марта) 1855 г.',
            'card_imp':'1825–1855 гг.',
            'card_cur':'Консервативный правитель, укрепивший самодержавие и бюрократический аппарат. Подавил восстание декабристов и усилил цензуру. При нем проведена кодификация законов (Свод законов Российской империи). Неудачи: поражение в Крымской войне (1853–1856), выявившее отсталость России.'
-}
-    render(request, 'test_app/nic_1.html', data)
+           }
+    return render(request, 'test_app/nic_1.html', data)
 def alex_2(request):
-    render(request, 'test_app/alex_2.html')
+    data ={'main':'no','card_img':'test_app/img/alex2.jpg', 'card_name':'Александр II (Александр Николаевич)',
+           'card_life':'17 (29) апреля 1818 г. - 1 (13) марта 1881 г.',
+           'card_imp':'1855–1881 гг.',
+           'card_cur':'Провел Великие реформы, включая отмену крепостного права в 1861 году. Реорганизовал судебную систему, армию и местное самоуправление. Однако его либеральные реформы вызвали недовольство как консерваторов, так и радикалов. Убит народовольцами в 1881 году.'
+           }
+    return render(request, 'test_app/alex_2.html',data)
 def alex_3(request):
-    render(request, 'test_app/alex_3.html')
+    data = {'main': 'no', 'card_img': 'test_app/img/alex2.jpg', 'card_name': 'Александр III (Александр Александрович)',
+            'card_life': '26 февраля (10 марта) 1845 г. - 20 октября (1 ноября) 1894 г.',
+            'card_imp': '1881–1894 гг.',
+            'card_cur': 'Проводил консервативную политику, свернув многие реформы Александра II. Укрепил самодержавие и подавлял революционные движения. При нем Россия не участвовала в крупных войнах, что способствовало экономическому росту. Однако социальные проблемы оставались нерешенными.'
+            }
+
+    return render(request, 'test_app/alex_3.html',data)
 def nic_2(request):
-    render(request, 'test_app/nic_2.html')
+    data = {'main': 'no', 'card_img': 'test_app/img/nic2.jpg', 'card_name': 'Николай II (Николай Александрович)',
+            'card_life': '6 (18) мая 1868 г. - 17 июля 1918 г.',
+            'card_imp': '1894–1917 гг.',
+            'card_cur': 'Последний российский император, при котором произошли революции 1905 и 1917 годов. При нем Россия потерпела поражение в Русско-японской войне и участвовала в Первой мировой войне. Провел ограниченные реформы (создание Госдумы), но не смог предотвратить крах империи. Расстрелян вместе с семьей в 1918 году.'
+          }
+    return render(request, 'test_app/nic_2.html',data)
 
 
