@@ -1,0 +1,20 @@
+{% extends 'test_app/layoute.html' %}
+
+{% block title %}
+    <title>Новости</title>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Последние новости</h1>
+{% for new in news %}
+	<div>
+		<h3> {{ new.title }} </h3>
+		<p>Кратко: {{ new.short_description }} </p>
+       	<p>Содержание: {{ new.text }} </p>
+       	<p>Дата публикации: {{ new.pub_date }} </p>
+       	<p>Автор: {{ new.author }} </p>
+	</div>
+{% endfor %}
+
+{% endblock %}

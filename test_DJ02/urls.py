@@ -19,6 +19,7 @@ from django.urls import path
 from django.conf import settings  # Импортируем settings
 from django.conf.urls.static import static  # Импортируем static
 from test_app import views
+from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
@@ -26,4 +27,6 @@ urlpatterns = [
     path('alex_2/', views.alex_2, name='alex_2'),
     path('alex_3/', views.alex_3, name='alex_3'),
     path('nic_2/', views.nic_2, name='nic_2'),
+    path('news/', include('news.urls'))
+
    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
